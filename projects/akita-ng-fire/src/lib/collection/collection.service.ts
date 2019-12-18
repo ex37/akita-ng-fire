@@ -84,11 +84,6 @@ export class CollectionService<S extends EntityState<any, string>>  {
     return this.path;
   }
 
-  /** An observable version of the path */
-  get path$(): Observable<string> {
-    return isObservable(this.path) ? this.path : of(this.path);
-  }
-
   /**
    * The Angular Fire collection
    * @notice If path is an observable, it becomes an observable.
