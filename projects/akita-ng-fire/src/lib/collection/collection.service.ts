@@ -62,7 +62,7 @@ export class CollectionService<S extends EntityState<any, string>>  {
   }
 
   private getPath({ params }: PathParams) {
-    return params ? pathWithParams(this.currentPath, params) : this.currentPath;
+    return params ? pathWithParams(this.path, params) : this.currentPath;
   }
 
   get idKey() {
@@ -71,7 +71,7 @@ export class CollectionService<S extends EntityState<any, string>>  {
   }
 
   /** The path to the collection in Firestore */
-  get path(): string | Observable<string> {
+  get path(): string {
     return this.constructor['path'] || this.collectionPath;
   }
 
